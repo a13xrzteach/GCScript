@@ -1,0 +1,2 @@
+# GCScript
+Google Classroom Scripts
