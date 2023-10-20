@@ -22,7 +22,7 @@ function courseData() {
 function assignmentSubmissionState() {
 
   // replace SELECTED_COURSE_ID with your course ID of choice
-  var courseId = '523985195676';
+  var courseId = '#######';
 
   var assignments = Classroom.Courses.CourseWork.list(courseId).courseWork;
   var students = Classroom.Courses.Students.list(courseId).students;
@@ -177,9 +177,9 @@ function notifier() {
 
     Logger.log(emailBody);
     Logger.log(stEmail);
-    //Logger.log(stWork);
+    
 
-    MailApp.sendEmail(stEmail, "Outstanding Work", emailBody);
+    //MailApp.sendEmail(stEmail, "Outstanding Work", emailBody);
   }
 
  
