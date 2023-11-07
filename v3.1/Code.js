@@ -167,8 +167,29 @@ function checkData() {
   var message = Object.values(mergedArrays);
   
   for (var i = 0; i < message.length; i++) {
-    Logger.log(message[i]);
+    // Logger.log(message[i]);
     // ui.alert(message[i])
+  }
+
+  var emailWords = "This email is a reminder that you have some outstanding work on the Google Classroom to finish:";
+  var stEmail;
+  var stName;
+  var stWork;
+  var emailBody;
+  for (var i = 0; i < message.length; i++) {
+    if (message[i].length >= 2) { // Check if the subarray has at least 2 elements
+      stName=message[i][0];
+      emailBody = "Hello "+stName+", \n\n"+emailWords;
+      stEmail=message[i][1]; 
+      stWork =message[i].slice(2);
+      emailBody+= stWork;
+    }
+
+    Logger.log(emailBody);
+    Logger.log(stEmail);
+    
+
+    //MailApp.sendEmail(stEmail, "Outstanding Work", emailBody);
   }
 }
 
